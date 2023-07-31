@@ -2,7 +2,7 @@ const { src, dest, parallel } = require('gulp')
 
 const sass = require('gulp-sass')(require('sass'))
 const bable = require('gulp-babel')
-const imagemin = require('gulp-imagemin')
+// const imagemin = require('gulp-imagemin')
 
 const style = () => {
   return src('src/assets/styles/*.scss', { base: 'src' })
@@ -17,17 +17,17 @@ const script = () => {
 }
 
 // gulp-image 依赖安装失败
-const image = () => {
-  return src('src/assets/images/**', { base: 'src' })
-    .pipe(imagemin())
-    .pipe(dest('dist'))
-}
+// const image = () => {
+//   return src('src/assets/images/**', { base: 'src' })
+//     .pipe(imagemin())
+//     .pipe(dest('dist'))
+// }
 
-const font = () => {
-  return src('src/assets/font/**', { base: 'src' })
-    .pipe(imagemin())
-    .pipe(dest('dist'))
-}
+// const font = () => {
+//   return src('src/assets/font/**', { base: 'src' })
+//     .pipe(imagemin())
+//     .pipe(dest('dist'))
+// }
 
 const compile = parallel(style, script)
 
